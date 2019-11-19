@@ -1,4 +1,9 @@
 class ServicesController < ApplicationController
+
+  def index
+    @booked_services = current_user.booked_services
+    @received_services = current_user.received_services
+
   before_action :find_service, only: %i(show edit update)
 
   def show
@@ -42,5 +47,6 @@ class ServicesController < ApplicationController
 
   def find_service
     @service = Service.find(params[:id])
+
   end
 end

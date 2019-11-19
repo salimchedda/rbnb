@@ -1,0 +1,29 @@
+<!-- il faut render la navbar -->
+<div class="container">
+
+  <div class="status-appointment">
+    <div class="card-grid-user">
+      <div class="card-grid-user-status">
+        <!-- faire une boucle pour que chaque student affiche sa carte -->
+        <%= render './shared/card' %>
+        <%= render './shared/card' %>
+        <%= render './shared/card' %>
+      </div>
+      <div class="card-grid-user-status">
+        <%= render './shared/card' %>
+        <%= render './shared/card' %>
+        <%= render './shared/card' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-appointment">
+  <div class="row">
+    <div class="card-grid-container-done">
+      <%= render './shared/card' %>
+      <%= render './shared/card' %>
+      <%= render './shared/card' %>
+    </div>
+  </div>
+  </div>
+</div>
