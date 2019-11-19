@@ -1,0 +1,50 @@
+<%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :address %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :email %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :price %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :simple_description %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :detailed_description %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :experience %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :social_networks %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :keyword %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+
+
+
+
