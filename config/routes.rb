@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :services, only: [:new, :create]
   end
-  # resources :services, only: [:edit, :update]
+  resources :services, only: [:index, :edit, :update]
 end

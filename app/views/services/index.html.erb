@@ -2,12 +2,14 @@
 <div class="container">
 
   <div class="status-appointment">
-    <div class="type-user">
-      <!-- faire une boucle pour que chaque student affiche sa carte -->
-      <%= render './shared/card' %>
-    </div>
-    <div class="type-user">
-      <%= render './shared/card' %>
+    <div class="row">
+      <div class="col-6 type-user">
+        <!-- faire une boucle pour que chaque student affiche sa carte -->
+        <%= render './shared/card' %>
+      </div>
+      <div class="col-6 type-user">
+        <%= render './shared/card' %>
+      </div>
     </div>
   </div>
 
