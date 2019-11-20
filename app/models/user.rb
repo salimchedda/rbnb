@@ -11,7 +11,7 @@ class User < ApplicationRecord
   #  pour pouvoir sign up sans name et address
   # validates :name, :address, presence: true
   # validates :name, uniqueness: true
-=======
+
   has_one_attached :photo
 
 end
