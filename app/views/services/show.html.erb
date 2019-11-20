@@ -2,10 +2,18 @@
 <div class="card-product">
   <img src="https://unsplash.com/photos/FcLyt7lW5wg" />
   <div class="card-product-infos">
+    <h2><strong>Booking confirmed!</strong></h4>
     <h2><%# @service.name %></h2>
-    <p>Availabilities: <%= @service.date %></p>
-    <p>Address: <%= @service.address %></p>
-    <p>Status: <%= @service.status %></p>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+    <p><strong>Availabilities:</strong> <%= @service.date %></p>
+    <p><strong>Address:</strong> <%= @service.address %></p>
+    <p><strong>Status:</strong> <%= @service.status %></p><br>
+    <p><%= link_to "Back to your bookings", profile_service_path %></p>
+    <p><%= link_to "Modify booking", edit_profile_service_path %></p>
   </div>
 </div>
+
+
+<!-- profiles_path(@profile) -->
+<!-- profile_services_path(current_user) -->
+<!-- profile_service_path(@profile, @service) -->
+<!-- edit_profile_service_path(@profile, @service) -->

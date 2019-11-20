@@ -21,7 +21,7 @@
       <%= simple_form_for [@profile, @service], url: profile_services_path do |f| %>
         <%= f.input :date %>
         <%= f.input :address %>
-        <%= f.input :status %>
+        <%= f.input :status, collection: ['Sent', 'Accepted', 'Declined', 'Done'] %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>
