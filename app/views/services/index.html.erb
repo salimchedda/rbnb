@@ -3,14 +3,14 @@
 
   <div class="status-appointment">
     <div class="card-grid-user">
-      <h1>Booked services</h1>
+      <h1>Courses Booked</h1>
+      <h1>Upcoming courses</h1>
       <div class="card-grid-user-status">
         <!-- faire une boucle pour que chaque student affiche sa carte -->
         <% @booked_services.each do |service| %>
           <%= render './shared/card', service: service %>
         <% end %>
       </div>
-      <h1>Received services</h1>
       <div class="card-grid-user-status">
         <% @received_services.each do |service| %>
           <%= render './shared/card', service: service %>
