@@ -3,6 +3,8 @@ class ServicesController < ApplicationController
   def index
     @booked_services = current_user.booked_services
     @received_services = current_user.received_services
+    @archived_services = [@booked_services, @received_services]
+                         .flatten.select { |service| service.status == "paid" }
   end
 
   before_action :find_service, only: %i(show edit update)

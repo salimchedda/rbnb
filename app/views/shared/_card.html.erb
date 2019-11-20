@@ -16,9 +16,13 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+      <% if service.teacher == current_user %>
+        <h2><%= service.student.name %></h2>
+      <% else %>
+        <h2><%= service.teacher.name %></h2>
+      <% end %>
+      <p><%= service.date %></p>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
+    <h2 class="card-trip-pricing"><%= service.teacher.price %></h2>
   </div>
 </div>
