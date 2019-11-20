@@ -3,6 +3,7 @@ class ServicesController < ApplicationController
   def index
     @booked_services = current_user.booked_services
     @received_services = current_user.received_services
+  end
 
   before_action :find_service, only: %i(show edit update)
 
