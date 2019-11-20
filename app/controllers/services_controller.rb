@@ -3,6 +3,7 @@ class ServicesController < ApplicationController
   def index
     @booked_services = current_user.booked_services
     @received_services = current_user.received_services
+  end
 
   before_action :find_service, only: %i(show edit update)
 
@@ -20,7 +21,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.student = current_user
     @service.teacher = @profile
-    raise
+
     if @service.save
       redirect_to profile_service_path(@profile, @service)
     else
@@ -36,7 +37,7 @@ class ServicesController < ApplicationController
   def update
     # @service = Service.find(params[:id])
     @service.update(params[:service])
-    # redirect_to services_path
+    redirect_to service_path(@service)
   end
 
   private
@@ -47,6 +48,5 @@ class ServicesController < ApplicationController
 
   def find_service
     @service = Service.find(params[:id])
-
   end
 end
