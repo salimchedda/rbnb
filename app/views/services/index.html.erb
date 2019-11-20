@@ -3,26 +3,29 @@
 
   <div class="status-appointment">
     <div class="card-grid-user">
+      <h1>Booked services</h1>
       <div class="card-grid-user-status">
         <!-- faire une boucle pour que chaque student affiche sa carte -->
-        <%= render './shared/card' %>
-        <%= render './shared/card' %>
-        <%= render './shared/card' %>
+        <% @booked_services.each do |service| %>
+          <%= render './shared/card', service: service %>
+        <% end %>
       </div>
+      <h1>Received services</h1>
       <div class="card-grid-user-status">
-        <%= render './shared/card' %>
-        <%= render './shared/card' %>
-        <%= render './shared/card' %>
+        <% @received_services.each do |service| %>
+          <%= render './shared/card', service: service %>
+        <% end %>
       </div>
     </div>
   </div>
 
   <div class="status-appointment">
+    <h1>Archived services</h1>
   <div class="row">
     <div class="card-grid-container-done">
-      <%= render './shared/card' %>
-      <%= render './shared/card' %>
-      <%= render './shared/card' %>
+      <% @archived_services.each do |service| %>
+        <%= render './shared/card', service: service %>
+      <% end %>
     </div>
   </div>
   </div>
