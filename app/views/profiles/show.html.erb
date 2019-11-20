@@ -18,7 +18,10 @@
 
 <p><%= @profile.address %></p>
 
+<% if @profile.photo.attached? %>
+
 <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+<%end  %>
 
 
 <h3><%= link_to 'Book your TA' , new_profile_service_path(@profile) %></h3>
