@@ -34,8 +34,8 @@ puts 'Creating 100 fake services...'
   service = Service.new(
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
     status: "#{["booked", "made", "paid"][rand(0..2)]}",
-    teacher_id: "123T3T3",
-    student_id: "23Y3YI3"
+    teacher_id: (1..10).to_a.sample,
+    student_id: (1..10).to_a.sample
   )
   service.save!
 end
