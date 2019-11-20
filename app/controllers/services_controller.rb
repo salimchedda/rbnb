@@ -23,7 +23,6 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.student = current_user
     @service.teacher = @profile
-    raise
     if @service.save
       redirect_to profile_service_path(@profile, @service)
     else
@@ -50,6 +49,5 @@ class ServicesController < ApplicationController
 
   def find_service
     @service = Service.find(params[:id])
-
   end
 end
