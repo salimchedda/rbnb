@@ -3,6 +3,8 @@ class ServicesController < ApplicationController
   def index
     @booked_services = current_user.booked_services
     @received_services = current_user.received_services
+    @archived_services = [@booked_services, @received_services]
+                         .flatten.select { |service| service.status == "paid" }
   end
 
   before_action :find_service, only: %i(show edit update)
@@ -21,7 +23,6 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.student = current_user
     @service.teacher = @profile
-
     if @service.save
       redirect_to profile_service_path(@profile, @service)
     else

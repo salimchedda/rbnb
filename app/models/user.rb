@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :booked_services, class_name: 'Service', foreign_key: 'student_id'
   has_many :received_services, class_name: 'Service', foreign_key: 'teacher_id'
 
-  validates :name, :address, presence: true
-  validates :name, uniqueness: true
+  #  pour pouvoir sign up sans name et address
+  # validates :name, :address, presence: true
+  # validates :name, uniqueness: true
+
+  has_one_attached :photo
+
 end
