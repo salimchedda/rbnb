@@ -4,14 +4,21 @@
     <div class="filters">Inserer formulaire de recherche </div>
     <div class="row cards_search_TA">
       <% @profiles.each do |profile| %>
-      <div class="card_search_TA">
-        <p><%= profile.name %></p>
-        <p><%= profile.simple_description %></p>
-        <p><%= profile.keyword %></p>
-        <p><%= profile.price%></p>
-          <%= link_to 'details', profile_path(profile) %>
-      </div>
+
+        <% image_url = profile.photo.attached? ? cl_image_path(profile.photo.key, height: 300, width: 400, crop: :fill) : asset_url('prof.jpg') %>
+
+        <div class="card_search_TA" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('<%= image_url %>')">
+          <p><%= profile.name %></p>
+          <p><%= profile.simple_description %></p>
+          <p><%= profile.keyword %></p>
+          <p><%= profile.price%></p>
+            <%= link_to 'details', profile_path(profile) %>
+        </div>
       <% end %>
+</div>
+
+
 
 
 
