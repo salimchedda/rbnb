@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
 
 puts 'Creating 100 fake users...'
+# file = URI.open('https://meme.eq8.eu/noidea.jpg')
 100.times do
 
   user = User.new(
@@ -20,7 +22,9 @@ puts 'Creating 100 fake users...'
     password: "123456",
     keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
   )
+  # user.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
   user.save!
+
 end
 puts 'Finished!'
 
