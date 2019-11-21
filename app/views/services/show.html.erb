@@ -2,13 +2,19 @@
 <div class="card-product">
   <img src="https://unsplash.com/photos/FcLyt7lW5wg" />
   <div class="card-product-infos">
-    <h2><strong>Booking confirmed!</strong></h4>
+
+    <% if params[:action] != 'new' %>
+     <h2><strong>Tutoring modified!</strong></h4>
+    <% else %>
+      <h2><strong>Tutoring confirmed!</strong></h4>
+    <% end %>
+
     <h2><%# @service.name %></h2>
     <p><strong>Availabilities:</strong> <%= @service.date %></p>
     <p><strong>Address:</strong> <%= @service.address %></p>
     <p><strong>Status:</strong> <%= @service.status %></p><br>
-    <p><%= link_to "Back to your bookings", profile_service_path %></p>
-    <p><%= link_to "Modify booking", edit_profile_service_path %></p>
+    <p><%= link_to "Back to your tutorings", profile_services_path %></p>
+    <p><%= link_to "Modify tutoring", edit_profile_service_path %></p>
   </div>
 </div>
 
@@ -17,3 +23,4 @@
 <!-- profile_services_path(current_user) -->
 <!-- profile_service_path(@profile, @service) -->
 <!-- edit_profile_service_path(@profile, @service) -->
+
