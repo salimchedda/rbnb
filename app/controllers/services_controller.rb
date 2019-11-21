@@ -23,8 +23,9 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.student = current_user
     @service.teacher = @profile
+
     if @service.save
-      redirect_to profile_service_path(@profile, @service)
+      redirect_to profile_service_path(@profile, @service, created: 'true')
     else
       render 'new'
     end
