@@ -26,31 +26,32 @@
     <%= f.input :detailed_description %>
   </div>
 
-  <div class="form-inputs">
+  <div class="form-inputs form-horizontal">
     <%= f.input :experience, as: :radio_buttons, collection: [
-      ['0', 'Junior (up to 2 years)'],
-      ['1', 'Mid-level (2-7 years)'],
-      ['2', 'Senior (over 7 years)']
-    ], label_method: :second, value_method: :first %>
+      ['Junior (up to 2 years)'],
+      ['Mid-level (2-7 years)'],
+      ['Senior (over 7 years)']
+    ], label_method: :first, value_method: :first, wrapper: :vertical_collection_inline%>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :social_networks %>
+    <%= f.input :social_networks, :label => "Show us your good work!", placeholder:"https://github.com/marcodu71" %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :keyword, collection: ['Back end', 'Front end', 'Full stack'], as: :check_boxes %>
+    <%= f.input :keyword, :label => "Areas of expertise", collection: ['Back-end', 'Front-end', 'Full stack'], as: :radio_buttons, wrapper: :vertical_collection_inline %>
   </div>
 
   <div class="form-inputs">
     <%= f.input :photo, as: :file %>
   </div>
 
-
-  <div class="form-actions">
+  <div class="form-actions btn btn-primary">
     <%= f.button :submit %>
   </div>
+
 <% end %>
+
 <!-- , item_label_class: 'my-custom-class' -->
 
 
