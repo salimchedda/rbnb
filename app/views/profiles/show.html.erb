@@ -19,8 +19,9 @@
 <p><%= @profile.address %></p>
 
 <% if @profile.photo.attached? %>
-
 <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+<% else  %>
+<%= image_tag("prof.jpg")  %>
 <%end  %>
 
 
