@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+
+// .link_home {
+//   margin-top: 5px;
+// }
+// .container {
+//     display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+
+.photo_home {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.link_home {
+  display: flex;
+  justify-content: space-around;
+}
