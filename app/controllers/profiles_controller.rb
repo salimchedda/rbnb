@@ -26,17 +26,14 @@ class ProfilesController < ApplicationController
     @profile = User.new
   end
 
-
-
-
-
-
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :photo)
+      params.require(:user).permit(:name, :email, :photo, :price, :simple_description, :detailed_description, :experience, :social_networks, :keyword )
     end
 
 
 end
+
+
