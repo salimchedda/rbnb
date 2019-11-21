@@ -1,8 +1,8 @@
 class ServicesController < ApplicationController
 
   def index
-    @booked_services = current_user.booked_services
-    @received_services = current_user.received_services
+    @booked_services = current_user.booked_services.limit(3)
+    @received_services = current_user.received_services.limit(3)
 
     @archived_services = [@booked_services, @received_services]
                          .flatten.select { |service| service.status == "paid" }
