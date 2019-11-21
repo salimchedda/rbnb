@@ -5,12 +5,27 @@ class ProfilesController < ApplicationController
         users.keyword @@ :query \
         OR users.simple_description @@ :query \
       "
-      # @profiles = User.where(sql_query, query: "%#{params[:query]}%")
       @profiles = User.search_by_keyword_and_simple_description(params[:query])
+
+      if params[:query2].present? && params[:query3].present?
+        @profiles = @profiles.select { |u| u.price < params[:query3].to_i && u.price > params[:query2].to_i }
+      elsif params[:query2].present? && params[:query3].present? == false
+        @profiles = @profiles.select { |u| u.price > params[:query2].to_i }
+      elsif params[:query2].present? == false && params[:query3].present?
+        @profiles = @profiles.select { |u| u.price < params[:query3].to_i }
+      else
+      end
+
     else
       @profiles = User.all
     end
 
+    # if params[:query2].present? && params[:query3].present?
+    #   sql_query = "price BETWEEN #{params[:query2]} AND #{params[:query3]}"
+    #   @profiles = User.where(sql_query)
+    # else
+    #   @profiles = User.all
+    # end
   end
 
   def show
