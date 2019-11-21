@@ -12,7 +12,6 @@
     <h2><%# @service.name %></h2>
     <p><strong>Availabilities:</strong> <%= @service.date %></p>
     <p><strong>Address:</strong> <%= @service.address %></p>
-
     <% if !params[:created] %>
       <p><strong>Status:</strong> <%= @service.status %></p><br>
     <% end %>

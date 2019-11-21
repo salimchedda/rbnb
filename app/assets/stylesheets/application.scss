@@ -11,3 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+#test{
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+}
