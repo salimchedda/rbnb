@@ -10,7 +10,7 @@
      <!--  <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a> -->
             <%= link_to "Home", root_path, class:"nav-link" %>
           </li>
-          <% if user_signed_in?%>
+          <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to "Be a TA", profile_path(current_user), class:"nav-link"%>
             </li>
@@ -33,7 +33,9 @@
     </div>
     <div>
 
+    <% if user_signed_in? %>
     <%= image_tag current_user.photo, class: "avatar-large", alt: "avatar-large" %>
+    <% end %>
     </div>
   </div>
 </nav>
