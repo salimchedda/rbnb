@@ -1,6 +1,16 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = User.all
+    if params[:query].present?
+      sql_query = " \
+        users.keyword @@ :query \
+        OR users.simple_description @@ :query \
+      "
+      # @profiles = User.where(sql_query, query: "%#{params[:query]}%")
+      @profiles = User.search_by_keyword_and_simple_description(params[:query])
+    else
+      @profiles = User.all
+    end
+
   end
 
   def show
@@ -30,8 +40,10 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :photo)
+      params.require(:user).permit(:name, :email, :photo, :price, :simple_description, :detailed_description, :experience, :social_networks, :keyword )
     end
 
 
 end
+
+

@@ -2,9 +2,17 @@
   <div class="container_search_TA">
     <h1 id="select_TA"> Select your Teaching Assistant 🤓</h1>
     <div class="filters">Inserer formulaire de recherche </div>
+    <div class="search_bar">
+      <%= form_tag profiles_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a TA"%>
+     <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+    </div>
     <div class="row cards_search_TA">
       <% @profiles.each do |profile| %>
-
         <% image_url = profile.photo.attached? ? cl_image_path(profile.photo.key, height: 300, width: 400, crop: :fill) : asset_url('prof.jpg') %>
 
         <div class="card_search_TA" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),

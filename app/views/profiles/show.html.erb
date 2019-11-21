@@ -1,35 +1,46 @@
-<p><%= @profile.name %></p>
+<div class="container_profile">
 
-<p><%= @profile.email %></p>
+  <div class="container_profile_1">
 
-<p><%= @profile.address %></p>
+    <div class="photo">
+      <% if @profile.photo.attached? %>
+      <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else  %>
+      <%= image_tag("prof.jpg")  %>
+      <%end  %>
+    </div>
 
-<p><%= @profile.price %></p>
+    <div class ="profile_description">
+      <p id="name"><%= @profile.name %></p>
+      <p id= "simple_description"><%= @profile.simple_description %></p>
+      <p><%= @profile.keyword %></p>
+      <p><%= @profile.experience %></p>
+      <p><%= @profile.social_networks %></p>
+      <p><%= @profile.email %></p>
+      <p><%= @profile.address %></p>
+    </div>
 
-<p><%= @profile.simple_description %></p>
+    <div class="container_booking">
+      <div class="price_TA"> <p>Price / day : <%= @profile.price %> €</p>
+      </div>
 
-<p><%= @profile.detailed_description %></p>
+      <% if @profile == current_user %>
+        <div class="formulaire_TA ">
+          <h3><%= link_to 'Update your profile' , edit_profile_path(@profile), :class => "btn btn-primary" %></h3>
+        </div>
+      <% else %>
+        <div class="formulaire_student">
+          <h3><%= link_to 'Book your TA' , new_profile_service_path(@profile), :class => "btn btn-primary" %></h3>
+        </div>
+      <%end%>
+    </div>
+  </div>
 
-<p><%= @profile.experience %></p>
-
-<p><%= @profile.social_networks %></p>
-
-<p><%= @profile.keyword %></p>
-
-<p><%= @profile.address %></p>
-
-<% if @profile.photo.attached? %>
-<%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
-<% else  %>
-<%= image_tag("prof.jpg")  %>
-<%end  %>
-
-
-<h3><%= link_to 'Book your TA' , new_profile_service_path(@profile) %></h3>
-
-<h3><%= link_to 'Update your profile' , edit_profile_path(@profile) %></h3>
-
-
+  <div class="container_profile_2">
+    <div class="description">
+      <p><%= @profile.detailed_description %></p>
+    </div>
+</div>
 
 
 
