@@ -1,4 +1,3 @@
-
 <div class="container_profile">
 
   <div class="container_profile_1">
@@ -6,6 +5,8 @@
     <div class="photo">
       <% if @profile.photo.attached? %>
       <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else  %>
+      <%= image_tag("prof.jpg")  %>
       <%end  %>
     </div>
 

@@ -1,19 +1,14 @@
-<!-- <div class="card-appointment">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-appointment-infos">
-    <div>
-      <#% @booked_services.each do |service| %>
-      <h2> <#%= service.teacher.email %> </h2>
-      <p> Ruby </p>
-      <#% end %>
-    </div>
-    <h2 class="card-appointment-pricing"> 9€</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
-<!--   </div>
-</div> -->
-
 <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <% if service.teacher == current_user %>
+    <%= service.student.photo.attached? ?
+        image_tag(service.student.photo) :
+        image_tag("prof.jpg")  %>
+  <% else %>
+    <%= service.teacher.photo.attached? ?
+        image_tag(service.teacher.photo) :
+        image_tag("prof.jpg")  %>
+  <% end %>
+
   <div class="card-trip-infos">
     <div>
       <% if service.teacher == current_user %>

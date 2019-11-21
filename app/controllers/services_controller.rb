@@ -7,6 +7,7 @@ class ServicesController < ApplicationController
     @archived_services = [@booked_services, @received_services]
                          .flatten.select { |service| service.status == "paid" }
 
+    @profile = current_user
   end
 
   before_action :find_service, only: %i(show edit update)
