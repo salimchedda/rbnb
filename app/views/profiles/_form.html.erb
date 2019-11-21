@@ -27,7 +27,11 @@
   </div>
 
   <div class="form-inputs">
-    <%= f.input :experience %>
+    <%= f.input :experience, as: :radio_buttons, collection: [
+      ['0', 'Junior (up to 2 years)'],
+      ['1', 'Mid-level (2-7 years)'],
+      ['2', 'Senior (over 7 years)']
+    ], label_method: :second, value_method: :first %>
   </div>
 
   <div class="form-inputs">
@@ -35,7 +39,7 @@
   </div>
 
   <div class="form-inputs">
-    <%= f.input :keyword %>
+    <%= f.input :keyword, collection: ['Back end', 'Front end', 'Full stack'], as: :check_boxes %>
   </div>
 
   <div class="form-inputs">
@@ -47,9 +51,6 @@
     <%= f.button :submit %>
   </div>
 <% end %>
-
-
-
-
+<!-- , item_label_class: 'my-custom-class' -->
 
 
