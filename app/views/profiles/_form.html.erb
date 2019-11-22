@@ -1,55 +1,47 @@
 <%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="container">
+      <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :address %>
+      </div>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :address %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :email %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :price %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :simple_description %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :detailed_description %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :experience, as: :radio_buttons, collection: [
-      ['0', 'Junior (up to 2 years)'],
-      ['1', 'Mid-level (2-7 years)'],
-      ['2', 'Senior (over 7 years)']
-    ], label_method: :second, value_method: :first %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :social_networks %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :keyword, collection: ['Back end', 'Front end', 'Full stack'], as: :check_boxes %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :photo, as: :file %>
-  </div>
+      <div class="form-inputs">
+          <%= f.input :email %>
+          <%= f.input :price %>
+      </div>
 
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+      <div class="form-input">
+          <%= f.input :simple_description %>
+          <%= f.input :detailed_description %>
+      </div>
+
+      <div class="form-inputs-collection" >
+        <%= f.input :experience, as: :radio_buttons, collection: [
+          ['0', 'Junior (up to 2 years)'],
+          ['1', 'Mid-level (2-7 years)'],
+          ['2', 'Senior (over 7 years)']
+        ], label_method: :second, value_method: :first %>
+
+        <%= f.input :keyword, collection: ['Back end', 'Front end', 'Full stack'], as: :check_boxes %>
+      </div>
+
+      <div class="form-input">
+        <%= f.input :social_networks %>
+      </div>
+
+      <div class="form-input">
+        <%= f.input :photo, as: :file %>
+      </div>
+
+    </div>
+
+      <div class="form-actions button-color">
+        <%= f.button :submit %>
+      </div>
+      <br>
 <% end %>
 <!-- , item_label_class: 'my-custom-class' -->
 

@@ -1,42 +1,47 @@
 
-  <div class="container_search_TA">
-    <h1 id="select_TA"> Select your Teaching Assistant 🤓</h1>
-    <div class="filters">Inserer formulaire de recherche </div>
-
+<div class="container">
+  <br>
+  <h1 id="select_TA"> Select your Teaching Assistant 🤓</h1>
+  <br>
     <div class="search_bar">
       <%= form_tag profiles_path, method: :get do %>
+      <p><strong>Research by name: </strong></p>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Find a TA"%>
+      <br>
+      <p><strong>Your minimum price: </strong></p>
       <%= text_field_tag :query2,
-    params[:query2],
-    class: "form-control",
-    placeholder: "prix min."
-  %>
-  <%= text_field_tag :query3,
-    params[:query3],
-    class: "form-control",
-    placeholder: "prix max"
-  %>
-     <%= submit_tag "Search", class: "btn btn-primary" %>
+      params[:query2],
+      class: "form-control",
+      placeholder: "Less is more"
+      %>
+      <br>
+        <p><strong>Your maximum price: </strong></p>
+      <%= text_field_tag :query3,
+        params[:query3],
+        class: "form-control",
+        placeholder: "You can do better"
+      %>
+      <br>
+     <%= submit_tag "Search", class: "btn button-index button-color" %>
     <% end %>
     </div>
-
-
-
 
     <div class="row cards_search_TA">
       <% @profiles.each do |profile| %>
         <% image_url = profile.photo.attached? ? cl_image_path(profile.photo.key, height: 300, width: 400, crop: :fill) : asset_url('prof.jpg') %>
 
-        <div class="card_search_TA" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        <div class="card_search_TA" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
         url('<%= image_url %>')">
-          <p><%= profile.name %></p>
+          <strong><p><%= profile.name %></p></strong>
           <p><%= profile.simple_description %></p>
           <p><%= profile.keyword %></p>
-          <p><%= profile.price%></p>
-            <%= link_to 'details', profile_path(profile) %>
+          <p><%= profile.price%> €</p>
+          <!-- \ FAUT IL FERMER LA BALISE A ? -->
+          <a class="btn button-new" <%= link_to 'See more', profile_path(profile) %>
+
         </div>
       <% end %>
 </div>
