@@ -37,7 +37,7 @@
 
     <div class="row cards_search_TA">
       <% @profiles.each do |profile| %>
-        <% image_url = profile.photo.attached? ? cl_image_path(profile.photo.key, height: 300, width: 400, crop: :fill) : asset_url('prof.jpg') %>
+        <% image_url = profile.photo.attached? ? cl_image_path(profile.photo.key, height: 300, width: 400, crop: :fill, gravity: :face) : asset_url('prof.jpg') %>
 
         <div class="card_search_TA" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
         url('<%= image_url %>')">
