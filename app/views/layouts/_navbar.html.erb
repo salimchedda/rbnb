@@ -11,7 +11,7 @@
      <!--  <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a> -->
             <%= link_to "Home", root_path, class:"nav-link" %>
           </li>
-          <% if user_signed_in?%>
+          <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to "Become TA", profile_path(current_user), class:"nav-link"%>
             </li>
@@ -33,8 +33,9 @@
       </div>
     </div>
     <div>
-    <% if user_signed_in? %>
-      <%= image_tag current_user.photo, class: "avatar-large", alt: "avatar-large" %>
+
+    <% if (user_signed_in?&&current_user.photo.attached?) %>
+    <%= image_tag current_user.photo, class: "avatar-large", alt: "avatar-large" %>
     <% end %>
     </div>
   </div>

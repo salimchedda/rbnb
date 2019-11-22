@@ -1,6 +1,7 @@
 <%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<<<<<<< HEAD
     <div class="container">
       <div class="form-inputs">
           <%= f.input :name %>
@@ -18,18 +19,20 @@
           <%= f.input :detailed_description %>
       </div>
 
-      <div class="form-inputs-collection" >
-        <%= f.input :experience, as: :radio_buttons, collection: [
-          ['0', 'Junior (up to 2 years)'],
-          ['1', 'Mid-level (2-7 years)'],
-          ['2', 'Senior (over 7 years)']
-        ], label_method: :second, value_method: :first %>
 
-        <%= f.input :keyword, collection: ['Back end', 'Front end', 'Full stack'], as: :check_boxes %>
+
+      <div class="form-inputs-collection ">
+        <%= f.input :experience, as: :radio_buttons, collection: [
+          ['Junior (up to 2 years)'],
+          ['Mid-level (2-7 years)'],
+          ['Senior (over 7 years)']
+        ], label_method: :first, value_method: :first %>
+
+        <%= f.input :keyword, :label => "Areas of expertise", collection: ['Back-end', 'Front-end', 'Full stack'], as: :radio_buttons %>
       </div>
 
       <div class="form-input">
-        <%= f.input :social_networks %>
+        <%= f.input :social_networks, :label => "Show us your good work!", placeholder:"https://github.com/marcodu71" %>
       </div>
 
       <div class="form-input">
@@ -42,7 +45,9 @@
         <%= f.button :submit %>
       </div>
       <br>
+
 <% end %>
+
 <!-- , item_label_class: 'my-custom-class' -->
 
 
