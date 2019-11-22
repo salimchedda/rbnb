@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   resources :profiles, only: [:index, :show, :edit, :update] do
 
     resources :services, only: [:new, :create, :show, :index, :edit, :update]
-
-
   end
+
+  resources :services, only: [:new, :create, :show, :index, :edit, :update] do
+
+        resources :reviews
   # resources :services, only: [:index, :edit, :update]
+end
+
 end
