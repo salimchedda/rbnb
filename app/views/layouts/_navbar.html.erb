@@ -35,7 +35,7 @@
     <div>
 
     <% if (user_signed_in?&&current_user.photo.attached?) %>
-    <%= image_tag current_user.photo, class: "avatar-large", alt: "avatar-large" %>
+      <%= image_tag current_user.photo, class: "avatar-large", alt: "avatar-large" %>
     <% end %>
     </div>
   </div>

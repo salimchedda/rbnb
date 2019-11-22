@@ -13,7 +13,12 @@ class ServicesController < ApplicationController
   before_action :find_service, only: %i(show edit update)
 
   def show
-    # @service = Service.find(params[:id])
+    @profile = User.find(params[:profile_id])
+    # services as student
+    @booked_services = @profile.booked_services
+    # services as teacher
+    @received_services = @profile.received_services
+    @reviews = Review.where(service: @booked_services)
   end
 
   def new
