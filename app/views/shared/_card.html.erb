@@ -13,11 +13,12 @@
     <div>
       <% if service.teacher == current_user %>
         <h2><%= service.student.name %></h2>
+        <h2><%= service.student.name %></h2>
       <% else %>
         <h2><%= service.teacher.name %></h2>
       <% end %>
       <p><%= service.date %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= service.teacher.price %></h2>
+    <h2 class="card-trip-pricing"><%= service.teacher.price %>€</h2>
   </div>
 </div>

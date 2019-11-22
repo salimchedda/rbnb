@@ -1,51 +1,42 @@
 <div class="container_profile">
-
   <div class="container_profile_1">
-
     <div class="photo">
       <% if @profile.photo.attached? %>
-      <%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @profile.photo.key, height: 270, width: 350, crop: :fill %>
       <% else  %>
       <%= image_tag("prof.jpg")  %>
       <%end  %>
     </div>
-
     <div class ="profile_description">
       <p id="name"><%= @profile.name %></p>
+      <p><strong>Mail : </strong> <%= @profile.email %></p>
+      <p><strong>Address : </strong><%= @profile.address %></p>
       <p id= "simple_description"><%= @profile.simple_description %></p>
-      <p><%= @profile.keyword %></p>
+      <p><strong>Skills : </strong><%= @profile.keyword %></p>
       <p><%= @profile.experience %></p>
       <p><%= @profile.social_networks %></p>
-      <p><%= @profile.email %></p>
-      <p><%= @profile.address %></p>
     </div>
-
-    <div class="container_booking">
+       <div class="container_booking">
       <div class="price_TA"> <p>Price / day : <%= @profile.price %> €</p>
       </div>
 
       <% if @profile == current_user %>
         <div class="formulaire_TA ">
-          <h3><%= link_to 'Update your profile' , edit_profile_path(@profile), :class => "btn btn-primary" %></h3>
+          <h3><%= link_to 'Update your profile' , edit_profile_path(@profile), :class => "btn button-color" %></h3>
         </div>
       <% else %>
         <div class="formulaire_student">
-          <h3><%= link_to 'Book your TA' , new_profile_service_path(@profile), :class => "btn btn-primary" %></h3>
+          <h3><%= link_to 'Book your TA' , new_profile_service_path(@profile), :class => "btn button-color" %></h3>
         </div>
       <%end%>
-    </div>
   </div>
 
+  </div>
   <div class="container_profile_2">
     <div class="description">
+      <strong><u>Comments : </u></strong>
       <p><%= @profile.detailed_description %></p>
     </div>
+  </div>
 </div>
-
-
-
-
-
-
-
 

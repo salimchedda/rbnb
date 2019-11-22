@@ -1,0 +1,36 @@
+.container_search_TA {
+  display: flex;
+}
+
+.cards_search_TA {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+  margin: 100px 200px;
+}
+
+.card_search_TA {
+  text-align: center;
+  border-radius: 30px;
+  background-size: cover;
+  color: white;
+}
+
+#select_TA {
+  text-align: center;
+}
+
+.filters {
+  text-align: center;
+}
+
+.button-index {
+  margin-left: 500px;
+  width: 150px;
+}
+
+.button-new {
+  background-color: #3c70a4;
+  color: white;
+}

@@ -17,13 +17,8 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h1>Create a new service</h1>
-      <%= simple_form_for [@profile, @service], url: profile_services_path do |f| %>
-        <%= f.input :date %>
-        <%= f.input :address %>
-        <%= f.input :status, collection: ['Sent', 'Accepted', 'Declined', 'Done'] %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+      <h1>Create a new tutoring</h1>
+          <%= render "form", service: @service %>
     </div>
   </div>
 </div>

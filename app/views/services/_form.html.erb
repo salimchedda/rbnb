@@ -1,4 +1,4 @@
-<%= simple_form_for([@profile, @service], url: profile_services_path, method: :patch) do |f| %>
+<%= simple_form_for([@profile, @service], url: profile_services_path, method: :post) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -10,12 +10,18 @@
     <%= f.input :address %>
   </div>
 
-  <div class="form-inputs">
-    <%= f.input :status, collection: ['Sent', 'Accepted', 'Declined', 'Payed'] %>
-  </div>
+  <% if params[:action] != 'new' %>
+    <div class="form-inputs">
+      <%= f.input :status, collection: ['Sent', 'Accepted', 'Declined', 'Payed'] %>
+    </div>
+  <% end %>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <% if params[:action] != 'new' %>
+      <%= f.button :submit, 'Modify tutoring', class: 'btn btn-primary' %>
+    <% else %>
+      <%= f.button :submit, 'Create tutoring', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 <% end %>
 
