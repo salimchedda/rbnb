@@ -5,11 +5,11 @@
 
     <div class="search_bar">
       <%= form_tag profiles_path, method: :get do %>
-      <p><strong>Research by name: </strong></p>
+      <p><strong>What kind of TA are you looking for? </strong></p>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control has-search",
-      placeholder: "Find a TA"%>
+      placeholder: "Ruby? Front-end?"%>
       <br>
       <p><strong>Your minimum price: </strong></p>
       <%= text_field_tag :query2,
