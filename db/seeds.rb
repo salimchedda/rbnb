@@ -179,7 +179,7 @@ filesalim = URI.open('./app/assets/images/salim.jpg')
 salim = User.new(
     name:    "Salim Cheddadi",
     address: "#{Faker::Address.street_address}, Paris",
-    price:,
+    # price:,
     simple_description: "",
     detailed_description: "Je cherche des cours en Ruby, Rails, JavaScript, SQL, HTML, CSS...",
     email: "salim@cheddadi.com",
