@@ -18,7 +18,7 @@
         </div>
         <div class="card-grid-user-status">
           <% @received_services.each do |service| %>
-          <%= link_to profile_service_path(@profile, service) do %>
+          <%= link_to edit_profile_service_path(@profile, service) do %>
             <%= render './shared/card', profile: @profile, service: service %>
           <% end %>
           <% end %>
