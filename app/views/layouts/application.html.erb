@@ -9,8 +9,18 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-   <%= render "layouts/navbar" %>
   <body>
+
+    <%= render "layouts/navbar" %>
+    <div class="fixfooter">
+      <a class="notice"><%= notice %></a>
+      <a class="alert"><%= alert %></a>
+      <%= yield %>
+    </div>
+    <%= render "./shared/footer" %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
@@ -29,6 +39,6 @@
       </div>
     <% end %>
 
+
   </body>
-    <%= render "./shared/footer" %>
 </html>
