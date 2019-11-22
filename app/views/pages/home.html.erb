@@ -1,6 +1,4 @@
-
  <div class="container">
-
   <div class="photo_home">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -10,24 +8,31 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag "prof1.jpg", alt: "prof1", class: "d-block image-home" %>
+
+          <%= image_tag "home_page3.jpg", alt: "prof1", class: "d-block image-home" %>
+
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Si toi aussi, comme lui, tu ne comprends RIEN ...</h3>
+<!--             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
           </div>
         </div>
         <div class="carousel-item">
-          <%= image_tag "prof2.jpg", alt: "prof2", class: "d-block image-home" %>
+
+          <%= image_tag "home_page2.jpg", alt: "prof2", class: "d-block image-home" %>
+
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>... si comme eux, tu fais semblant d'écouter ...</h3>
+<!--             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
           </div>
         </div>
         <div class="carousel-item">
-          <%= image_tag "prof3.jpg", alt: "prof2", class: "d-block image-home" %>
+
+          <%= image_tag "home_page1.jpg", alt: "prof2", class: "d-block image-home" %>
+
+
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h2>... fais comme Boris et <strong>ADOPT A TA !</strong></h2>
+<!--             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
           </div>
         </div>
       </div>
@@ -43,8 +48,10 @@
   </div>
 
   <div class="link_home">
-    <%= link_to "I want to adopt a TA", profiles_path, class: 'btn btn-info btn-lg' %>
-    <%= link_to "I want to be a TA", profile_path(current_user), class: 'btn btn-info btn-lg'  %>
+    <% if user_signed_in? %>
+      <%= link_to "I want to adopt a TA", profiles_path, class: 'btn btn-info btn-lg button-color' %>
+      <%= link_to "I want to be a TA", profile_path(current_user), class: 'btn btn-info btn-lg button-color'  %>
+    <% end %>
   </div>
 
 </div>

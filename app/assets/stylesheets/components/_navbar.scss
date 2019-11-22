@@ -17,3 +17,12 @@
   display:flex;
   justify-content: space-between;
 }
+
+#nav-color {
+  background-color: #3c70a4;
+  border-radius: 2px;
+}
+
+.navbar-nav > li {
+  color: white;
+}
