@@ -180,7 +180,8 @@ salim = User.new(
     name:    "Salim Cheddadi",
     address: "#{Faker::Address.street_address}, Paris",
     # price:,
-    simple_description: "",
+    simple_description: "Sans-papiers",
+    price: rand(100..500),
     detailed_description: "Je pense que rajouter un filtre noir et blanc sur ma photo de ton profil me donne l'air plus intelligent",
     email: "salim@cheddadi.com",
     password: "123456",
@@ -208,8 +209,8 @@ mohamed = User.new(
     name:    "Mohamed Ouasti",
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
-    simple_description: "Développeur Full-stack senior",
-    detailed_description: "J'ai 10 ans d'expérience à l'étranger, ce qui m'empêche de vous communiquer les coordonnées de mes anciens employeurs. En outre, j'ai un certificat médical qui m'empêche de me soumettre aux tests techniques. A part ça, adoptez moi ! ",
+    simple_description: "Développeur BTP",
+    detailed_description: "Demandez moi une anecdote sur le BTP et je peux vous tenir 2h",
     email: "mohamed@ouasti.com",
     password: "123456",
     keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
@@ -307,6 +308,20 @@ christophe = User.new(
   christophe.photo.attach(io: filechristophe, filename: 'some-image.jpg', content_type: 'image/jpg')
   christophe.save
 
+    filejuliends = URI.open('./app/assets/images/juliends.jpg')
+    juliends = User.new(
+    name:    "Julien Da Silva",
+    address: "#{Faker::Address.street_address}, Paris",
+    price: rand(100..500),
+    simple_description: "Meilleur que Kevin",
+    detailed_description: "Je n'hésite pas à scaffold si l'athmosphère s'y prête",
+    email: "julien@ds.com",
+    password: "123456",
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
+  )
+  juliends.photo.attach(io: filejuliends, filename: 'some-image.jpg', content_type: 'image/jpg')
+  juliends.save
+
 
 puts 'Creating 10 fake services...'
 10.times do
@@ -320,6 +335,7 @@ puts 'Creating 10 fake services...'
     student: student
   )
   service.save!
+
 end
 puts 'Finished!'
 

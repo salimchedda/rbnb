@@ -64,8 +64,6 @@ ActiveRecord::Schema.define(version: 2019_11_21_160237) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "student_id"
-    t.bigint "teacher_id"
     t.string "name"
     t.integer "price"
     t.text "simple_description"
@@ -76,8 +74,6 @@ ActiveRecord::Schema.define(version: 2019_11_21_160237) do
     t.string "keyword"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["student_id"], name: "index_users_on_student_id"
-    t.index ["teacher_id"], name: "index_users_on_teacher_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
