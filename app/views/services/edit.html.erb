@@ -1,14 +1,14 @@
-<div class="container mt-4">
+<div class="container mt-1">
   <div class="row">
     <div class="col-6 m-auto">
       <div class="service-form">
         <h1>Modify tutoring</h1>
-        <div class="mt-3">
+        <div class="mt-3, mb-2">
           <%= render "form", service: @service %>
+          <%= render 'partial', service: @service %>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<%= render 'partial', service: @service %> <%# , service: @service %>

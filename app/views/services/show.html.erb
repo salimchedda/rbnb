@@ -17,7 +17,7 @@
     <% end %>
 
     <p><%= link_to "Back to your tutorings", profile_services_path %></p>
-    <p><%= link_to "Modify tutoring", edit_profile_service_path %></p>
+    <p><%= link_to "Modify tutoring/Add a review", edit_profile_service_path %></p>
   </div>
 
     <div class="card-profile-infos">
@@ -67,7 +67,7 @@
     <%= review.comment%>
     <h3> ratings </h3>
     <%= smiles = ''
-        for i in (0..review.rating)
+        for i in (1..review.rating)
            smiles += "🤪"
         end
         smiles %>
