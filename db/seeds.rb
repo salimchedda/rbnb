@@ -102,7 +102,6 @@ puts 'Cleaning database...'
 #   frantz.save
 
 puts 'Creating 10 fake services...'
-10.times do
 # >>>>>>> master
 
 # filelouis = URI.open('./app/assets/images/louis.jpg')
