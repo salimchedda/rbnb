@@ -9,12 +9,12 @@
     </div>
     <div class ="profile_description">
       <p id="name"><%= @profile.name %></p>
+      <p><strong>Mail : </strong> <%= @profile.email %></p>
+      <p><strong>Address : </strong><%= @profile.address %></p>
       <p id= "simple_description"><%= @profile.simple_description %></p>
       <p><strong>Skills : </strong><%= @profile.keyword %></p>
       <p><%= @profile.experience %></p>
       <p><%= @profile.social_networks %></p>
-      <p><strong>Mail : </strong> <%= @profile.email %></p>
-      <p><strong>Address : </strong><%= @profile.address %></p>
     </div>
        <div class="container_booking">
       <div class="price_TA"> <p>Price / day : <%= @profile.price %> €</p>
