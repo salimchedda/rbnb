@@ -1,5 +1,4 @@
 <div class="container_profile">
-
   <div class="container_profile_1">
     <div class="photo">
       <% if @profile.photo.attached? %>
@@ -8,7 +7,6 @@
       <%= image_tag("prof.jpg")  %>
       <%end  %>
     </div>
-
     <div class ="profile_description">
       <p id="name"><%= @profile.name %></p>
       <p id= "simple_description"><%= @profile.simple_description %></p>
@@ -18,8 +16,7 @@
       <p><strong>Mail : </strong> <%= @profile.email %></p>
       <p><strong>Address : </strong><%= @profile.address %></p>
     </div>
-
-    <div class="container_booking">
+       <div class="container_booking">
       <div class="price_TA"> <p>Price / day : <%= @profile.price %> €</p>
       </div>
 
@@ -32,16 +29,13 @@
           <h3><%= link_to 'Book your TA' , new_profile_service_path(@profile), :class => "btn button-color" %></h3>
         </div>
       <%end%>
-    </div>
   </div>
 
+  </div>
   <div class="container_profile_2">
     <div class="description">
       <strong><u>Comments : </u></strong>
       <p><%= @profile.detailed_description %></p>
     </div>
+  </div>
 </div>
-
-
-
-

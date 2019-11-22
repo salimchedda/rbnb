@@ -179,9 +179,9 @@ filesalim = URI.open('./app/assets/images/salim.jpg')
 salim = User.new(
     name:    "Salim Cheddadi",
     address: "#{Faker::Address.street_address}, Paris",
-    price: rand(100..500),
-    simple_description: "Le meilleur d'entre nous",
-    detailed_description: "Je donne des cours en Ruby, Rails, JavaScript, SQL, HTML, CSS...",
+    price:,
+    simple_description: "",
+    detailed_description: "Je cherche des cours en Ruby, Rails, JavaScript, SQL, HTML, CSS...",
     email: "salim@cheddadi.com",
     password: "123456",
     keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
