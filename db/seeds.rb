@@ -181,7 +181,7 @@ salim = User.new(
     address: "#{Faker::Address.street_address}, Paris",
     # price:,
     simple_description: "",
-    detailed_description: "Je cherche des cours en Ruby, Rails, JavaScript, SQL, HTML, CSS...",
+    detailed_description: "Je pense que rajouter un filtre noir et blanc sur ma photo de ton profil me donne l'air plus intelligent",
     email: "salim@cheddadi.com",
     password: "123456",
     keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
@@ -194,7 +194,7 @@ julien = User.new(
     name:    "Julien Nunez",
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
-    simple_description: "Vive l'argent",
+    simple_description: "J'aime l'argent",
     detailed_description: "Je me passionne pour le cash, surtout en liquide",
     email: "julien@nunez.com",
     password: "123456",
@@ -208,8 +208,8 @@ mohamed = User.new(
     name:    "Mohamed Ouasti",
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
-    simple_description: "Le BTP c'est ma passion",
-    detailed_description: "Demandez-moi une anecdote sur le BTP, vous en aurez pour 2 heures",
+    simple_description: "Développeur Full-stack senior",
+    detailed_description: "J'ai 10 ans d'expérience à l'étranger, ce qui m'empêche de vous communiquer les coordonnées de mes anciens employeurs. En outre, j'ai un certificat médical qui m'empêche de me soumettre aux tests techniques. A part ça, adoptez moi ! ",
     email: "mohamed@ouasti.com",
     password: "123456",
     keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
@@ -223,7 +223,8 @@ frantz = User.new(
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
     simple_description: "Trop de swag on me",
-    detailed_description: "On dit de moi que je suis le mec le plus stylish du Wagon",
+    detailed_description: "Défaut: Je peux être très sévère
+    Qualité: Je peux être très sévère",
     email: "frantz@crozilhac.com",
     password: "123456",
     keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
@@ -298,7 +299,7 @@ christophe = User.new(
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
     simple_description: "Hey Dude, je suis trop cool mec",
-    detailed_description: "Salut Dude, tu peux réserver un cours avec moi mais n'oublie pas de me faire un ticket !",
+    detailed_description: "Hey Dude, comment ça va mon Aniou ? Tu me fais un ticket ? Non, t'inquiète j'te chauffe mec. Jt'adore. Tu me fais un ticket ? ",
     email: "chistophe@bouquet.com",
     password: "123456",
     keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
