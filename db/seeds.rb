@@ -19,7 +19,7 @@ require 'open-uri'
 #     detailed_description: "#{Faker::Lorem.paragraphs}",
 #     email: "#{Faker::Name.first_name}@#{Faker::Name.last_name}.com",
 #     password: "123456",
-#     keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+#     keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
 #   )
 # user.photo.attach(io: file, filename: 'some-image.jpg', content_type: 'image/jpg')
 # user.save!
@@ -46,11 +46,11 @@ salim = User.new(
     name:    "Salim Cheddadi",
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
-    simple_description: "Je cherche un TA compétent",
-    detailed_description: "Il me faut des cours en Ruby, Rails, JavaScript, SQL, HTML, CSS...",
+    simple_description: "Le meilleur d'entre nous",
+    detailed_description: "Je donne des cours en Ruby, Rails, JavaScript, SQL, HTML, CSS...",
     email: "salim@cheddadi.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   salim.photo.attach(io: filesalim, filename: 'some-image.jpg', content_type: 'image/jpg')
   salim.save
@@ -64,7 +64,7 @@ julien = User.new(
     detailed_description: "Je me passionne pour le cash, surtout en liquide",
     email: "julien@nunez.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   julien.photo.attach(io: filejulien, filename: 'some-image.jpg', content_type: 'image/jpg')
   julien.save
@@ -78,7 +78,7 @@ mohamed = User.new(
     detailed_description: "Demandez-moi une anecdote sur le BTP, vous en aurez pour 2 heures",
     email: "mohamed@ouasti.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   mohamed.photo.attach(io: filemohamed, filename: 'some-image.jpg', content_type: 'image/jpg')
   mohamed.save
@@ -92,7 +92,7 @@ frantz = User.new(
     detailed_description: "On dit de moi que je suis le mec le plus stylish du Wagon",
     email: "frantz@crozilhac.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   frantz.photo.attach(io: filefrantz, filename: 'some-image.jpg', content_type: 'image/jpg')
   frantz.save
@@ -106,7 +106,7 @@ louis = User.new(
     detailed_description: "Alright, Alright, Alright, Alright",
     email: "louis@sommer.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   louis.photo.attach(io: filelouis, filename: 'some-image.jpg', content_type: 'image/jpg')
   louis.save
@@ -117,10 +117,10 @@ capucine = User.new(
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
     simple_description: "La TA la plus calme du Wagon",
-    detailed_description: "Je corrige vos erreurs back et front avec le plus grand calme",
+    detailed_description: "Je corrige vos erreurs back et Front avec le plus grand calme",
     email: "capucine@scheidel.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   capucine.photo.attach(io: filecapucine, filename: 'some-image.jpg', content_type: 'image/jpg')
   capucine.save
@@ -130,11 +130,11 @@ celine = User.new(
     name:    "Celine Katz",
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
-    simple_description: "À la recherche cours",
-    detailed_description: "Je veux devenir la meilleure dev d'Ile-de-France",
+    simple_description: "Deux tickets pour le prix d'un",
+    detailed_description: "Ticket, ticket, qui veut un ticket?",
     email: "celine@katz.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   celine.photo.attach(io: fileceline, filename: 'some-image.jpg', content_type: 'image/jpg')
   celine.save
@@ -144,11 +144,11 @@ cecile = User.new(
     name:    "Cecile Desy",
     address: "#{Faker::Address.street_address}, Paris",
     price: rand(100..500),
-    simple_description: "Cherche pas en front de je suis la meilleure",
+    simple_description: "Cherche pas en Front je suis la meilleure",
     detailed_description: "Toujours dispo pour donner des cours et PIMPER ton website",
     email: "cecile@desy.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   cecile.photo.attach(io: filececile, filename: 'some-image.jpg', content_type: 'image/jpg')
   cecile.save
@@ -162,7 +162,7 @@ christophe = User.new(
     detailed_description: "Salut Dude, tu peux réserver un cours avec moi mais n'oublie pas de me faire un ticket !",
     email: "chistophe@bouquet.com",
     password: "123456",
-    keyword: "#{["front-end", "back_end", "full-stack"][rand(0..2)]}"
+    keyword: "#{["Front-end", "Back-end", "Full-stack"][rand(0..2)]}"
   )
   christophe.photo.attach(io: filechristophe, filename: 'some-image.jpg', content_type: 'image/jpg')
   christophe.save
