@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_101108) do
+ActiveRecord::Schema.define(version: 2019_11_21_160237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2019_11_20_101108) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "comment"
+    t.integer "rating"
+    t.string "title"
+    t.bigint "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_reviews_on_service_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.date "date"
     t.string "address"
@@ -54,8 +64,6 @@ ActiveRecord::Schema.define(version: 2019_11_20_101108) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "student_id"
-    t.bigint "teacher_id"
     t.string "name"
     t.integer "price"
     t.text "simple_description"
@@ -66,9 +74,8 @@ ActiveRecord::Schema.define(version: 2019_11_20_101108) do
     t.string "keyword"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["student_id"], name: "index_users_on_student_id"
-    t.index ["teacher_id"], name: "index_users_on_teacher_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "services"
 end

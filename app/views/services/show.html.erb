@@ -51,3 +51,34 @@
 </div>
 
 
+
+<!-- profiles_path(@profile) -->
+<!-- profile_services_path(current_user) -->
+<!-- profile_service_path(@profile, @service) -->
+<!-- edit_profile_service_path(@profile, @service) -->
+
+<div class="card-grid-user-status">
+
+  <% @reviews.each do |review| %>
+  <ul>
+  <li> <h3> title </h3>
+    <%= review.title%>
+    <h3> comment </h3>
+    <%= review.comment%>
+    <h3> ratings </h3>
+    <%= smiles = ''
+        for i in (0..review.rating)
+           smiles += "🤪"
+        end
+        smiles %>
+
+
+
+  </li>
+  </ul>
+  <% end %>
+
+
+</div>
+
+
