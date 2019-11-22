@@ -3,6 +3,8 @@
   <h1 id="select_TA"> Select your Teaching Assistant 🤓</h1>
   <br>
 
+  <div class="container">
+
     <div class="search_bar">
       <%= form_tag profiles_path, method: :get do %>
       <p><strong>What kind of TA are you looking for? </strong></p>
@@ -30,6 +32,8 @@
 
     <% end %>
     </div>
+
+  </div>
 
     <div class="row cards_search_TA">
       <% @profiles.each do |profile| %>
